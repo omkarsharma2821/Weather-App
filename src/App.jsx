@@ -3,7 +3,7 @@ import axios from "axios";
 import { WiDaySunny, WiCloud, WiRain, WiSnow, WiFog } from "react-icons/wi";
 import "./App.css";
 
-const API_KEY = "ae2425cf08c954450d181a8464415187";
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 const WeatherApp = () => {
   const [city, setCity] = useState("");
@@ -58,7 +58,6 @@ const WeatherApp = () => {
                 {weather.weather[0].description}
               </p>
             </div>
-            {/* </div> */}
             {/* Temperature Details in Table */}
             <table className="weather-table">
               <thead>
