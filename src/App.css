@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #87CEEB, #4682B4);
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family:  monospace;
+}
+
+.container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.weather-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  width: 600px;
+}
+
+input {
+  width: 70%;
+  padding: 15px;
+  margin-top: 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+button {
+  /* margin-bottom: 10px; */
+  background: #4682B4;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 75%;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #5a9bd4;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.weather-info {
+  margin-top: 20px;
+}
+.weather-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.weather-table th, .weather-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 18px;
+}
+
+.weather-table th {
+  background: #4682B4;
+  color: white;
+}
+
+.weather-table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+.weather-summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  /* gap: 100px; */
+}
+.weather-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+h1{
+  font-size: 2.5rem;
+}
