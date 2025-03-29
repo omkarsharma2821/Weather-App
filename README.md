@@ -1,12 +1,54 @@
-# React + Vite
+# 🚀 Deploying a React App on AWS EC2  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This guide will help you deploy your React app on an **AWS EC2** instance using **Ubuntu**.  
 
-Currently, two official plugins are available:
+## **1️⃣ Launch an EC2 Instance**  
+- Go to **AWS Console → EC2 → Launch Instance**.  
+- Choose an **Ubuntu** AMI (Ensure it's **Free Tier Eligible** if using Free Tier).  
+- Select an **instance type** (e.g., `t2.micro` for Free Tier).  
+- Create a **Key Pair** for SSH access.  
+- Configure **Security Groups**:  
+  - **Allow HTTP (Port 80) & HTTPS (Port 443)** for public access.  
+  - **Allow SSH (Port 22)** for remote login.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **2️⃣ Connect to Your EC2 Instance**  
+Once your instance is running, connect via SSH using your key pair:  
+```sh
+ssh -i your-key.pem ubuntu@your-ec2-public-ip
+```
+### 3️⃣ Set Up the Environment  
 
-## Expanding the ESLint configuration
+## Update Ubuntu  
+Run the following command to update system packages:  
+```sh
+sudo apt-get update && sudo apt-get upgrade -y
+```
+By default, Ubuntu does not have npm installed. Install it using:
+```sh
+sudo apt install npm -y
+```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 4️⃣ Deploy Your React App
+Clone Your Repository
+```sh
+git clone <your-repository-link>
+```
+Navigate to Your Project Directory
+```sh
+cd your-project-name
+```
+Install Dependencies
+```sh
+npm install
+```
+Start the React App
+```sh
+npm start
+```
+## 5️⃣ Handling EC2 Public IP Changes
+By default, AWS assigns a dynamic public IP that changes when the instance is restarted. To keep the same IP:
+-Attach an Elastic IP (AWS allows only 1 free Elastic IP in Free Tier).
+-Go to AWS Console → EC2 → Elastic IPs.
+-Allocate a new Elastic IP and associate it with your EC2 instance.
+
+Now, your app will remain accessible even after a reboot.
