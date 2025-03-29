@@ -16,9 +16,9 @@ Once your instance is running, connect via SSH using your key pair:
 ```sh
 ssh -i your-key.pem ubuntu@your-ec2-public-ip
 ```
-### 3️⃣ Set Up the Environment  
+## 3️⃣ Set Up the Environment  
 
-## Update Ubuntu  
+### Update Ubuntu  
 Run the following command to update system packages:  
 ```sh
 sudo apt-get update && sudo apt-get upgrade -y
