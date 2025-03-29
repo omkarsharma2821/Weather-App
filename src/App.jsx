@@ -19,7 +19,7 @@ const WeatherApp = () => {
       );
       setWeather(res.data);
     } catch (err) {
-      setError("City not found! Please try again.");
+      setError("City not found! Please check for typo.");
     }
   };
 
@@ -40,6 +40,7 @@ const WeatherApp = () => {
           placeholder="Enter city name"
           value={city}
           onChange={(e) => setCity(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && fetchWeather()}
         />
         <button onClick={fetchWeather}>Fetch Weather Report</button>
 
