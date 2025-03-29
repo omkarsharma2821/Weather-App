@@ -43,8 +43,13 @@ npm install
 ```
 Start the React App
 ```sh
-npm start
+npm run dev
 ```
+or
+```sh
+npm run dev -- --host
+```
+
 ## 5️⃣ Handling EC2 Public IP Changes
 By default, AWS assigns a dynamic public IP that changes when the instance is restarted. To keep the same IP:
 - Attach an Elastic IP (AWS allows only 1 free Elastic IP in Free Tier).
